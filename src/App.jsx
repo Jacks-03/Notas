@@ -14,6 +14,12 @@ const App =() => {
 const handleInputChange =(event) => { 
  setInputsState({ ...inputsState, [event.target.name]: event.target.value});
 }
+const handleClickLimpiar = (event) => {
+  setInputsState({ ...setInputsState, title:"", date:"", note:"" });
+};
+
+
+
 
   return (
     <div className="App">
@@ -33,6 +39,8 @@ const handleInputChange =(event) => {
         Nota
       <input id="note" name="note" type="text" onChange={handleInputChange} value={inputsState.note} /> 
       </label>
+
+      <button className="btn btn-primary me-2" onClick={handleClickLimpiar}>Limpiar</button>
 
     </div>
   );
