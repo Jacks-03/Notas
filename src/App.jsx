@@ -1,12 +1,27 @@
+import { useState } from "react";
 
-function App() {
-  return (
+const App =() => {
+  //hool -> use .....
+  //stage ->useState
+
+  const [state, setState]= useState("");
+
+
+const handleInputChange =(event) => { 
+setState(event.target.value);
+console.log(state)
+
+ };
+
+  return(
     <div className="App">
-      <header className="App-header">
-      <h2>Proyecto Notas</h2>
-      </header>
+<h1>proyecto "notas"</h1>
+      <label>
+        input de prueba
+      <input id="PruebaID" name="prueba" type="text" onChange={handleInputChange} value={state} /> 
+      </label>
+
     </div>
   );
 }
-
 export default App;
